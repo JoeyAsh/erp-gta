@@ -1,25 +1,30 @@
 {
-  "name": "erp-gta",
-  "private": true,
-  "workspaces": [
-    "./packages/*"
-  ],
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev:wn": "yarn workspaces @erp-gta/wn dev",
-    "build:wn": "yarn workspaces @erp-gta/wn build",
-    "lint": "eslint erp-gta --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
-  },
-  "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^6.8.0",
-    "@typescript-eslint/parser": "^6.8.0",
-    "@vitejs/plugin-react": "^4.1.0",
-    "eslint": "^8.52.0",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react-refresh": "^0.4.3",
-    "typescript": "^5.2.2",
-    "vite": "^4.5.0"
-  }
+    "name": "erp-gta",
+    "private": true,
+    "workspaces": [
+        "./packages/*"
+    ],
+    "version": "0.0.0",
+    "type": "module",
+    "scripts": {
+        "dev:wn": "yarn workspaces @erp-gta/wn dev",
+        "build:wn": "yarn workspaces @erp-gta/wn build",
+        "lint": "eslint erp-gta --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+        "preview": "vite preview"
+    },
+    "dependencies": {
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0"
+    },
+    "devDependencies": {
+        "@typescript-eslint/eslint-plugin": "^6.8.0",
+        "@typescript-eslint/parser": "^6.8.0",
+        "@vitejs/plugin-react": "^4.1.0",
+        "prettier": "^3.0.3",
+        "eslint": "^8.52.0",
+        "eslint-plugin-react-hooks": "^4.6.0",
+        "eslint-plugin-react-refresh": "^0.4.3",
+        "typescript": "^5.2.2",
+        "vite": "^4.5.0"
+    }
 }
