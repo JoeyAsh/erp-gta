@@ -7,8 +7,8 @@
     "version": "0.0.0",
     "type": "module",
     "scripts": {
-        "dev:wn": "yarn workspaces @erp-gta/wn dev",
-        "build:wn": "yarn workspaces @erp-gta/wn build",
+        "dev:wn": "yarn workspace @erp-gta/wn dev",
+        "build:wn": "yarn workspace @erp-gta/wn build",
         "lint": "eslint erp-gta --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
         "preview": "vite preview"
     },
