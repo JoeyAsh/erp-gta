@@ -1,3 +1,5 @@
+import {MouseEventHandler} from 'react';
+
 export type NewsImportance = 'normal' | 'high' | 'low';
 
 export interface NewsCardProps {
@@ -11,4 +13,5 @@ export interface NewsCardProps {
     date: string;
     creatorName: string;
     importance?: NewsImportance;
+    onClick?: MouseEventHandler;
 }
