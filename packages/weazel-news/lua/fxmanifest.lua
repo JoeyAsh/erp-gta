@@ -1,15 +1,15 @@
 fx_version "cerulean"
 game "gta5"
 
-title "LB Phone - App Template | React TS"
-description "A template for creating apps for the LB Phone."
-author "Breze & Loaf"
+title "LB Phone - Weazel News app"
+description "A App for the Weazel News."
+author "Sam Jones"
 
 client_script "client.lua"
 
 files {
-    "ui/dist/**/*",
-    "ui/icon.png"
+    "../dist/**/*",
+    "../icon.png"
 }
 
 -- ui_page "ui/dist/index.html"

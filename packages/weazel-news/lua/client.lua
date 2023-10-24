@@ -1,4 +1,4 @@
-local identifier = "weazl-news-app"
+local identifier = "weazel-news-app"
 
 CreateThread(function()
     while GetResourceState("lb-phone") ~= "started" do
@@ -8,7 +8,7 @@ CreateThread(function()
     local function AddApp()
         local added, errorMessage = exports["lb-phone"]:AddCustomApp({
             identifier = identifier,
-            name = "Weazl News",
+            name = "Weazel News",
             description = "...",
             developer = "Sam Jones",
             defaultApp = false, -- OPTIONAL if set to true, app should be added without having to download it,
