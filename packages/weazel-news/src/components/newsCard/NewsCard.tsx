@@ -17,6 +17,14 @@ const CardContent = styled(MuiCardContent)(`
     }
 `);
 
+const TextTypography = styled(Typography)(`
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        text-overflow: ellipsis;
+        overflow: hidden;
+`);
+
 export const NewsCard = (props: NewsCardProps) => {
     return (
         <Card>
@@ -50,18 +58,9 @@ export const NewsCard = (props: NewsCardProps) => {
                             }
                         />
                         <CardContent sx={{py: 1}}>
-                            <Typography
-                                sx={{
-                                    display: '-webkit-box',
-                                    '-webkit-box-orient': 'vertical',
-                                    '-webkit-line-clamp': '3',
-                                    textOverflow: 'ellipsis',
-                                    overflow: 'hidden'
-                                }}
-                                variant={'body2'}
-                            >
+                            <TextTypography variant={'body2'}>
                                 {props.text}
-                            </Typography>
+                            </TextTypography>
                         </CardContent>
                     </Box>
                 </Box>
