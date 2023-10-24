@@ -5,10 +5,10 @@ import { BrowserRouter as Router } from "react-router-dom";
 import App from "./components/app/App.tsx";
 import "./index.css";
 import darkTheme from "./themes/Theme.ts";
+import { devMode } from "./utils/Config.ts";
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-const devMode = !window?.['invokeNative'];
 const root = ReactDOM.createRoot(document.getElementById('root')!);
 
 if (window.name === '' || devMode) {
