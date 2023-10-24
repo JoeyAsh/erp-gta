@@ -14,12 +14,12 @@ CreateThread(function()
             defaultApp = false, -- OPTIONAL if set to true, app should be added without having to download it,
             size = 59812, -- OPTIONAL in kb
             price = 500, -- OPTIONAL, Make players pay with in-game money to download the app
-            -- images = {"https://example.com/photo.jpg"}, -- OPTIONAL array of images for the app on the app store
+            images = { "https://example.com/photo.jpg" }, -- OPTIONAL array of images for the app on the app store
 
-            -- ui = GetCurrentResourceName() .. "/ui/dist/index.html", -- built version
-            ui = "http://localhost:3000", -- dev version
+            ui = GetCurrentResourceName() .. "/ui/dist/index.html", -- built version
+            -- ui = "http://localhost:3000", -- dev version
 
-            icon = "https://cfx-nui-" .. GetCurrentResourceName() .. "/icon.png"
+            icon = "https://cfx-nui-" .. GetCurrentResourceName() .. "/ui/icon.png"
         })
 
         if not added then

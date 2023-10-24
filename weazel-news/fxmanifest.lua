@@ -8,9 +8,9 @@ author "Sam Jones"
 client_script "client.lua"
 
 files {
-    "../dist/**/*",
-    "../icon.png"
+    "ui/dist/**/*",
+    "ui/icon.png"
 }
 
--- ui_page "ui/dist/index.html"
-ui_page "http://localhost:3000"
+ui_page "ui/dist/index.html"
+-- ui_page "http://localhost:3000"
