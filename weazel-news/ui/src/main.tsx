@@ -2,10 +2,10 @@ import {ThemeProvider} from '@mui/material';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import {BrowserRouter as Router} from 'react-router-dom';
-import App from './components/app/App.tsx';
+import App from './components/app/App';
 import './index.css';
-import darkTheme from './themes/Theme.ts';
-import {devMode} from './utils/Config.ts';
+import darkTheme from './themes/Theme';
+import {devMode} from './utils/Config';
 
 const root = ReactDOM.createRoot(document.getElementById('root')!);
 
@@ -30,4 +30,3 @@ if (window.name === '' || devMode) {
         });
     }
 }
-

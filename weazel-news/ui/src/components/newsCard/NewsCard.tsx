@@ -9,7 +9,10 @@ import {
     Typography
 } from '@mui/material';
 import {grey} from '@mui/material/colors';
-import {NewsCardProps} from './NewsCardModels.ts';
+import {NewsCardProps} from './NewsCardModels';
+import WhatshotIcon from '@mui/icons-material/Whatshot';
+import BookmarkIcon from '@mui/icons-material/Bookmark';
+import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 
 const CardContent = styled(MuiCardContent)(`
     &:last-child {
@@ -27,7 +30,7 @@ const TextTypography = styled(Typography)(`
 
 export const NewsCard = (props: NewsCardProps) => {
     return (
-        <Card>
+        <Card elevation={0}>
             <CardActionArea onClick={props.onClick}>
                 <Box sx={{display: 'flex', flexDirection: 'row'}}>
                     <CardMedia
@@ -41,8 +44,20 @@ export const NewsCard = (props: NewsCardProps) => {
                     />
                     <Box sx={{textOverflow: 'ellipsis'}}>
                         <CardHeader
-                            sx={{py: 0}}
+                            sx={{pb: 0}}
                             disableTypography
+                            action={
+                                <>
+                                    {props.isFavourite ? (
+                                        <BookmarkIcon />
+                                    ) : (
+                                        <BookmarkBorderIcon />
+                                    )}
+                                    {props.importance === 'high' && (
+                                        <WhatshotIcon />
+                                    )}
+                                </>
+                            }
                             title={
                                 <Typography variant={'body1'}>
                                     <b>{props.title}</b>
@@ -58,7 +73,10 @@ export const NewsCard = (props: NewsCardProps) => {
                             }
                         />
                         <CardContent sx={{py: 1}}>
-                            <TextTypography variant={'body2'}>
+                            <TextTypography
+                                variant={'body2'}
+                                sx={{fontSize: '9pt'}}
+                            >
                                 {props.text}
                             </TextTypography>
                         </CardContent>

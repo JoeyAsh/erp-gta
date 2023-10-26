@@ -14,4 +14,5 @@ export interface NewsCardProps {
     creatorName: string;
     importance?: NewsImportance;
     onClick?: MouseEventHandler;
+    isFavourite?: boolean;
 }

@@ -8,7 +8,7 @@ const lightPalette: PaletteOptions = {
     //     disabled: 'rgba(255,255,255,0.5)'
     // },
     primary: {
-        main: '#134241',
+        main: '#312B55',
         contrastText: '#FFFFFF'
     },
     secondary: {
