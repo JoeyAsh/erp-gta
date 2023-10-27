@@ -33,8 +33,8 @@ export const MainPage = () => {
                         );
                     })}
                 </List>
-                <BottomNavigation />
             </Container>
+            <BottomNavigation />
         </Box>
     );
 };

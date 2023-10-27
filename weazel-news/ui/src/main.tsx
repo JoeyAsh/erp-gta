@@ -1,24 +1,24 @@
 import {ThemeProvider} from '@mui/material';
-import React from 'react';
-import ReactDOM from 'react-dom/client';
 import {BrowserRouter as Router} from 'react-router-dom';
 import App from './components/app/App';
 import './index.css';
 import darkTheme from './themes/Theme';
 import {devMode} from './utils/Config';
+import {createRoot} from 'react-dom/client';
+import {StrictMode} from 'react';
 
-const root = ReactDOM.createRoot(document.getElementById('root')!);
+const root = createRoot(document.getElementById('root')!);
 
 if (window.name === '' || devMode) {
     const renderApp = () => {
         root.render(
-            <React.StrictMode>
+            <StrictMode>
                 <ThemeProvider theme={darkTheme}>
                     <Router>
                         <App />
                     </Router>
                 </ThemeProvider>
-            </React.StrictMode>
+            </StrictMode>
         );
     };
 

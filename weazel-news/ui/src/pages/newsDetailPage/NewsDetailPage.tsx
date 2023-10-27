@@ -2,7 +2,7 @@ import {ArrowBack} from '@mui/icons-material';
 import {Box, Button, Stack, Typography} from '@mui/material';
 import {useEffect} from 'react';
 import {useNavigate, useParams} from 'react-router-dom';
-import {getMockData} from '../../mock/News.mock.ts';
+import {getMockData} from '../../mock/News.mock';
 
 export const NewsDetailPage = () => {
     const {newsId} = useParams();

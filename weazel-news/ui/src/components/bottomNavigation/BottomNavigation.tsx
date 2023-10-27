@@ -3,7 +3,7 @@ import {
     BottomNavigationAction,
     Paper
 } from '@mui/material';
-import {ReactNode, useState} from 'react';
+import {ReactNode, SyntheticEvent, useState} from 'react';
 import FeedIcon from '@mui/icons-material/Feed';
 import FeedOutlinedIcon from '@mui/icons-material/FeedOutlined';
 import BookmarkBorderOutlinedIcon from '@mui/icons-material/BookmarkBorderOutlined';
@@ -12,6 +12,7 @@ import LocalFireDepartmentIcon from '@mui/icons-material/LocalFireDepartment';
 import LocalFireDepartmentOutlinedIcon from '@mui/icons-material/LocalFireDepartmentOutlined';
 import StarIcon from '@mui/icons-material/Star';
 import StarBorderOutlinedIcon from '@mui/icons-material/StarBorderOutlined';
+import {useLocation, useNavigate} from 'react-router-dom';
 
 interface BottomNavigationActionItem {
     icon: ReactNode;
@@ -42,8 +43,21 @@ const items: BottomNavigationActionItem[] = [
     }
 ];
 
+const getInitialUrl = (url: string) => {
+    return items.findIndex((item) => item.url === url);
+};
+
 export const BottomNavigation = () => {
-    const [value, setValue] = useState(0);
+    const location = useLocation();
+    const [value, setValue] = useState(getInitialUrl(location.pathname));
+
+    const navigate = useNavigate();
+
+    const handleChange = (event: SyntheticEvent, newValue: number) => {
+        setValue(newValue);
+        navigate(items[newValue].url);
+    };
+
     return (
         <Paper
             sx={{
@@ -58,12 +72,11 @@ export const BottomNavigation = () => {
             <MuiBottomNavigation
                 showLabels={false}
                 value={value}
-                onChange={(_, newValue) => {
-                    setValue(newValue);
-                }}
+                onChange={handleChange}
             >
                 {items.map((item, index) => (
                     <BottomNavigationAction
+                        key={item.url}
                         showLabel={false}
                         icon={index === value ? item.selectedIcon : item.icon}
                     />
